@@ -1,5 +1,5 @@
 server: 
-  port: 8081
+  port: 8084
   servlet: 
     context-path: /sso-resource-server
 
@@ -10,8 +10,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8083/auth/realms/baeldung
-          jwk-set-uri: http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8080/auth/realms/SpringBootKeyClock
+          jwk-set-uri: http://localhost:8080/auth/realms/SpringBootKeyClock/protocol/openid-connect/certs
   h2:
     console:
       enabled: true
