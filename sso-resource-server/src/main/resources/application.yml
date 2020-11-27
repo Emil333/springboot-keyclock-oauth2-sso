@@ -1,17 +1,21 @@
-server: 
+server:
   port: 8084
-  servlet: 
+  servlet:
     context-path: /sso-resource-server
 
 
 ####### resource server configuration properties
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/auth/realms/SpringBootKeyClock
-          jwk-set-uri: http://localhost:8080/auth/realms/SpringBootKeyClock/protocol/openid-connect/certs
+#spring:
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: http://localhost:8080/auth/realms/SpringBootKeyClock
+#          jwk-set-uri: http://localhost:8080/auth/realms/SpringBootKeyClock/protocol/openid-connect/certs
+#        google:
+#          issuer: https://accounts.google.com
+#          jwks_uri: https://www.googleapis.com/oauth2/v3/certs
+
   h2:
     console:
       enabled: true
