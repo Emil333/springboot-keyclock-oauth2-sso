@@ -3,29 +3,27 @@ spring:
     oauth2:
       client:
         registration:
-          google:
-            clientId: 1071558407812-mhscdroafl47f0c9ftuoi82glio8gpj9.apps.googleusercontent.com
-            clientSecret: QsW2OJWTtthgi548eSLT9JpO
-            redirectUri: http://localhost:8081/ui-one/login/oauth2/code/custom
-            scope: profile,email
+          okta:
+            client-id: 0oa1dvclz4wwjsANN5d6
+            client-secret: oelPx1HZYGXNuEA3MGZQAuS292_-ZE-Hscy60s9X
+            client-name: okta
+            redirect-uri: http://localhost:8081/ui-one/login/oauth2/code/custom
           custom:
             client-id: login-app
             client-secret: keyClock@#12345
             scope: email,profile
             authorization-grant-type: authorization_code
             redirect-uri: http://localhost:8081/ui-one/login/oauth2/code/custom
+            client-name: keyclock
         provider:
+          okta:
+            issuer-uri: https://dev-4482561.okta.com/oauth2/default
           custom:
             authorization-uri: http://localhost:8080/auth/realms/SpringBootKeyClock/protocol/openid-connect/auth
             token-uri: http://localhost:8080/auth/realms/SpringBootKeyClock/protocol/openid-connect/token
             user-info-uri: http://localhost:8080/auth/realms/SpringBootKeyClock/protocol/openid-connect/userinfo
             user-name-attribute: preferred_username
-          google:
-            accessTokenUri: https://www.googleapis.com/oauth2/v3/token
-            userAuthorizationUri: https://accounts.google.com/o/oauth2/auth
-            tokenName: oauth_token
-            authenticationScheme: query
-            clientAuthenticationScheme: form
+
   thymeleaf:
     cache: false
   cache:
